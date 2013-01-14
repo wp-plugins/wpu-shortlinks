@@ -12,7 +12,7 @@ Allows automatic url shortening of post links using wpu.ir Services using the AP
 
 == Description ==
 
-Allows automatic url shortening of post links using wpu.ir Services using the API recently provided by WP-Parsi.
+Allows automatic url shortening of post links using [WPU.IR](http://wpu.ir/ "WP-Parsi Shortlinks System") Services using the API recently provided by WP-Parsi.
 
 == Installation ==
 
@@ -34,14 +34,23 @@ Use in post loop:
 Specific Post:
 `<a href="<?php wpu_shortlink(74) ?>">shortlink</a>`
 
-== Screenshots == 
+Request custom URI:
+`$shortlink = wpu_get_shortlink("http://www.google.com");`
 
 == Changelog ==
+
+= 1.1 =
+Add new function for custom request
+`$shortlink = wpu_get_shortlink("www.google.com");`
 
 = 1.0 =
 * Start the project...
 
 == Upgrade Notice ==
+
+= 1.1 =
+Add new function for custom request
+`$shortlink = wpu_get_shortlink("www.google.com");`
 
 = 1.0 =
 * Start the project...
