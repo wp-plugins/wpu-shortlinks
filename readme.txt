@@ -1,7 +1,7 @@
 === WPU Shortlinks ===
 Contributors: parselearn
 Donate link: http://wpu.ir/
-Tags: 
+Tags: shortlink , shorter link , link , wpu
 Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: 0.1.1
