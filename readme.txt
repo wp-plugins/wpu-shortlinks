@@ -1,7 +1,7 @@
 === WPU Shortlinks ===
 Contributors: parselearn
 Donate link: http://wpu.ir/
-Tags: shortlink , shorter link , link , wpu
+Tags: shortlink , shorter link , link , wpu , url shortener , yourls , custom url , short link, short url, shorturl ,  url generator, url , uri shortner , social url , linker 
 Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: 0.1.1
