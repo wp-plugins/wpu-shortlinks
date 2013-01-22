@@ -39,18 +39,24 @@ Request custom URI:
 
 == Changelog ==
 
-= 1.1 =
+= 0.1.2 =
+fix bug for get post link
+
+= 0.1.1 =
 Add new function for custom request
 `$shortlink = wpu_get_shortlink("www.google.com");`
 
-= 1.0 =
+= 0.1 =
 * Start the project...
 
 == Upgrade Notice ==
 
-= 1.1 =
+= 0.1.2 =
+fix bug for get post link
+
+= 0.1.1 =
 Add new function for custom request
 `$shortlink = wpu_get_shortlink("www.google.com");`
 
-= 1.0 =
+= 0.1 =
 * Start the project...
