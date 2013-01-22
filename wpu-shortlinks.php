@@ -4,7 +4,7 @@ Plugin Name: WPU Shortlinks
 Plugin URI: http://wpu.ir
 Description: Allows automatic url shortening of post links using wpu.ir Services using the API recently provided by WP-Parsi.
 Author: Parsa Kafi
-Version: 0.1.1
+Version: 0.1.2
 Author URI: http://parsa.ws
 */
 
@@ -98,16 +98,18 @@ function wpu_publish_widget($post){
 function wpu_get_shortlink($post){
 	global $WPU_API_URL;
 	
-	if(is_object($post)){
-		$post = $post->ID;
-	}
-	
 	if(is_numeric($post)){
 		if(function_exists("wp_get_shortlink"))
-			$post = wp_get_shortlink( $post );
+			$post_url = wp_get_shortlink( $post );
 		
-		if(empty($post))
-			$post = home_url( '/' ) . '?p=' . $post;
+		if(empty($post_url))
+			$post_url = home_url( '/' ) . '?p=' . $post;
+			
+	}elseif(is_object($post)){
+		$post = $post->ID;
+		$post_url = home_url( '/' ) . '?p=' . $post;
+	}else{
+		$post_url = $post;
 	}
 	
 	if(wpu_is_validurl($post)){
@@ -226,7 +228,7 @@ function wpu_is_validurl($url){
 	if($url==NULL || $url=="")
 		return false;
 	
-	if (preg_match('#^(http|https)://([A-Z0-9][A-Z0-9_-]*(?:.[A-Z0-9][A-Z0-9_-]*)+):?(d+)?/?#i', $url)) {
+	if (preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
 	    return true;
 	} else {
 	    return false;
