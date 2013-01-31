@@ -4,7 +4,7 @@ Plugin Name: WPU Shortlinks
 Plugin URI: http://wpu.ir
 Description: Allows automatic url shortening of post links using wpu.ir Services using the API recently provided by WP-Parsi.
 Author: Parsa Kafi
-Version: 0.1.2
+Version: 0.1.3
 Author URI: http://parsa.ws
 */
 
@@ -112,8 +112,8 @@ function wpu_get_shortlink($post){
 		$post_url = $post;
 	}
 	
-	if(wpu_is_validurl($post)){
-		$reUrl = $WPU_API_URL . $post ;
+	if(wpu_is_validurl($post_url)){
+		$reUrl = $WPU_API_URL . $post_url ;
 		
 		if (ini_get('allow_url_fopen')) {
 			if ($handle = @fopen($reUrl, 'r')) {
@@ -130,7 +130,7 @@ function wpu_get_shortlink($post){
 		}
 		
 		if ($result !== false) {			
-			return result;
+			return $result;
 			
 		}elseif(function_exists('wp_remote_post')){
 			$response = wp_remote_post( $reUrl, array(
@@ -179,6 +179,7 @@ function wpu_get_with_post($post_id){
 	
 	if(empty($wpu_shortlink)){
 		$result = wpu_get_shortlink($post_id);
+		
 		wpu_save_response($result , $post_id);
 	}
 }
@@ -227,8 +228,8 @@ function wpu_is_validurl($url){
 	$url = trim($url);
 	if($url==NULL || $url=="")
 		return false;
-	
-	if (preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
+	//if (preg_match('#^(http|https)://([A-Z0-9][A-Z0-9_-]*(?:.[A-Z0-9][A-Z0-9_-]*)+):?(d+)?/?#i', $url)) {
+	if (preg_match("/\b(?:(?:https?|ftp|http):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
 	    return true;
 	} else {
 	    return false;
