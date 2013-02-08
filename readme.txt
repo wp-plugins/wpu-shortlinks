@@ -4,7 +4,7 @@ Donate link: http://wpu.ir/
 Tags: shortlink , shorter link , link , wpu , url shortener , yourls , custom url , short link, short url, shorturl ,  url generator, url , uri shortner , social url , linker 
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,11 +39,15 @@ Request custom URI:
 
 == Changelog ==
 
+= 0.1.4 =
+Add languages file
+Show shortlink in admin posts
+
 = 0.1.3 =
-fix bug for get post link
+Fix bug for get post link
 
 = 0.1.2 =
-fix bug for get post link
+Fix bug for get post link
 
 = 0.1.1 =
 Add new function for custom request

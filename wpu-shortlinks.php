@@ -4,7 +4,7 @@ Plugin Name: WPU Shortlinks
 Plugin URI: http://wpu.ir
 Description: Allows automatic url shortening of post links using wpu.ir Services using the API recently provided by WP-Parsi.
 Author: Parsa Kafi
-Version: 0.1.3
+Version: 0.1.4
 Author URI: http://parsa.ws
 */
 
@@ -20,8 +20,46 @@ add_action('save_post', 'wpu_get_with_post');
 //add_action( 'load-post.php', 'wpu_add_custom_box' );
 //add_action( 'load-post-new.php', 'wpu_add_custom_box' );
 add_action('post_submitbox_misc_actions', 'wpu_publish_widget' );
-add_action('init', 'wpu_tinymce_botton');
+add_action('init', 'wpu_init');
 add_shortcode('wpu', 'wpu_shortcode' );
+add_action('admin_head', 'wpu_admin_head');
+add_filter('manage_posts_columns', 'wpu_shortlinks_columns_head');  
+add_action('manage_posts_custom_column', 'wpu_shortlinks_columns_content', 10, 2);
+
+
+function wpu_shortlinks_columns_head($defaults) {  
+	$defaults['wpu_shortlinks_column'] = __('Shortlink','wpu_shortlinks');  
+	return $defaults;  
+}
+
+function wpu_shortlinks_columns_content($column_name, $post_id) {  
+	if ($column_name == 'wpu_shortlinks_column') {  
+		$wpu_shortlink = get_post_meta($post_id, 'wpu_shortlink', true);
+		$wpu_shortlink_text = str_replace(array("http://","http://www"),'',$wpu_shortlink);
+		
+		if($wpu_shortlink){
+			echo '<a href="'.$wpu_shortlink.'" target="_blank">'.$wpu_shortlink_text.'</a>';
+		}
+	}  
+}  
+
+function wpu_admin_head(){
+	echo '
+	<script language="javascript">
+		var wpu_shortlinks_sltd = \''.__('Shortlink','wpu_shortlinks').'\';
+		var wpu_shortlinks_ast = \''.__('Add Shortlink wpu.ir','wpu_shortlinks').'\';
+		var wpu_shortlinks_slt = \''.__('Shortlink Title?','wpu_shortlinks').'\';
+	</script>';	
+}
+
+function wpu_init() {
+	load_plugin_textdomain('wpu_shortlinks','wp-content/plugins/wpu-shortlinks/languages');
+	
+	if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ){  
+		add_filter('mce_external_plugins', 'wpu_mce_external_plugins');  
+		add_filter('mce_buttons', 'wpu_mce_buttons');  
+	}  
+}
 
 function wpu_shortlink($post_id=NULL,$display=true){
 	global $post;
@@ -51,20 +89,13 @@ function wpu_shortcode($attr, $content = null) {
 		if(! empty($content))
 			$shortlink_text = $content;
 		else
-			$shortlink_text = "پیوند کوتاه";
+			$shortlink_text = __('Post Shortlink','wpu_shortlinks');
 		
 		$result = '<a href="'.$wpu_shortlink.'" target="_blank">'.$shortlink_text.'</a>';
 	}
 	
 	return $result;
-}
-
-function wpu_tinymce_botton() {  
-   if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ){  
-	 add_filter('mce_external_plugins', 'wpu_mce_external_plugins');  
-	 add_filter('mce_buttons', 'wpu_mce_buttons');  
-   }  
-}  
+} 
 
 function wpu_mce_buttons($buttons) {
 	array_push($buttons, "wpu_shortcode");
@@ -82,7 +113,7 @@ function wpu_publish_widget($post){
 	$wpu_shortlink = get_post_meta($post_id, 'wpu_shortlink', true);
 	
 	$out = '<div style="margin:5px 10px">';
-	$out .= 'لینک کوتاه: <input type="text" name="wpu_shortlink" value="'. $wpu_shortlink .'" size="25" onfocus="this.select()" style="text-align:left;direction:ltr;" readonly />';
+	$out .=  __('Shortlink: ','wpu_shortlinks') . ' <input type="text" name="wpu_shortlink" value="'. $wpu_shortlink .'" size="25" onfocus="this.select()" style="text-align:left;direction:ltr;" readonly />';
 	if(! empty($wpu_shortlink))
 		$out .= ' <a href="'.$wpu_shortlink.'" target="_blank">*</a>';
 	
@@ -143,13 +174,13 @@ function wpu_get_shortlink($post){
 			);
 			
 			if( is_wp_error( $response ) ) {
-				$_SESSION['wpu_error'] = 'خطا در اتصال به سرویس!';
+				$_SESSION['wpu_error'] = __('Error in connect to webservice!','wpu_shortlinks');
 				
 			} else {
 				return $response['body'];
 			}
 		} else {
-			$_SESSION['wpu_error'] = 'خطا در اتصال به سرویس!';
+			$_SESSION['wpu_error'] = __('Error in connect to webservice!','wpu_shortlinks');
 		}
 	}	
 }
@@ -186,7 +217,7 @@ function wpu_get_with_post($post_id){
 
 function wpu_save_response($result , $post_id){
 	if($result == 'URL is not valid!'){
-		$_SESSION['wpu_error'] = 'لینک ارسالی اعتبار ندارد!';
+		$_SESSION['wpu_error'] = __('Link not validate!','wpu_shortlinks');
 							
 	}elseif(wpu_is_validurl($result)){
 		if(! add_post_meta($post_id, 'wpu_shortlink', $result , true)) {
@@ -201,7 +232,7 @@ function wpu_add_custom_box($post_type) {
 	if( function_exists( 'add_meta_box' )) {
 		$types = array('attachment', 'revision', 'nav_menu_item');
 		if(! in_array($post_type, $types)){
-			add_meta_box( 'wpu_shortlinks', 'کوتاه کننده لینک (<a href="http://wpu.ir">WPU.IR</a>)', 'wpu_custom_box', $post_type , 'advanced' );
+			add_meta_box( 'wpu_shortlinks',  __('Shortlinker ','wpu_shortlinks') . ' (<a href="http://wpu.ir">WPU.IR</a>)', 'wpu_custom_box', $post_type , 'advanced' );
 		}
 	}
 }
@@ -212,7 +243,7 @@ function wpu_custom_box() {
 	
 	$wpu_shortlink = get_post_meta($post_id, 'wpu_shortlink', true);
 	
-	$out = 'لینک کوتاه: <input type="text" name="wpu_shortlink" value="'. $wpu_shortlink .'" size="40" onfocus="this.select()" style="text-align:left;direction:ltr;" readonly />';
+	$out =  __('Shortlink: ','wpu_shortlinks') . ' <input type="text" name="wpu_shortlink" value="'. $wpu_shortlink .'" size="40" onfocus="this.select()" style="text-align:left;direction:ltr;" readonly />';
 	if(! empty($wpu_shortlink))
 		$out .= ' <a href="'.$wpu_shortlink.'" target="_blank">*</a>';
 	
