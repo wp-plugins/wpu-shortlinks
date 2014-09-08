@@ -71,8 +71,21 @@ if($set['admin_bar_box']){
 
 function wpu_plugin_activate() {
 
+    $set = array(
+                   'shorturl_content' => 0,
+                   'admin_bar_box' => 1,
+                   'display_shortlink_content' => 0,
+                   'dsc_type' => 'text',
+                   'social_sharing_status' => 0,
+                   'social_sharing_order' => 'after_shortlink',
+                   'social_sharing_before_text' => '',
+                   'social_sharing_load_icon_css' => 1,
+                   'social_sharing_icon_size' => 16,
+                   'social_sharing_load_popup_js' => 0,
+                   'social_sharing_twitter_username' => '',
+                );
 
-//    update_option( "wpu_shortlinks_settings", $_POST);
+    add_option( "wpu_shortlinks_settings",$set);
 }
 
 function wpu_custom_menu_page() {
