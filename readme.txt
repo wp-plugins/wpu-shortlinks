@@ -18,7 +18,7 @@ Allows automatic url shortening of post links using [WPU.IR](http://wpu.ir/ "WP-
 * Generate ShortLinks with Bulk Action
 * Request ShortLink With Admin Bar Shortcut
 * Adds very simple social sharing buttons for Twitter, Facebook and Google+ to the end of your posts , based by [Social Sharing by Danny](https://wordpress.org/plugins/dvk-social-sharing/)
-* [Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/wpu-shortlinks/ "A simple URL Shortener Addon based on http://wpu.ir website.")
+* [Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/wpu-shortlinks/ "A simple URL Shortener Addon based on wpu.ir website.")
 
 == Installation ==
 
