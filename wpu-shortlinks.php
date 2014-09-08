@@ -1,10 +1,10 @@
-<?php 
+﻿<?php 
 /*
 Plugin Name: WPU Shortlinks
 Plugin URI: http://wpu.ir
 Description: Allows automatic url shortening of post links using wpu.ir Services using the API recently provided by WP-Parsi.
 Author: Parsa Kafi
-Version: 1.0
+Version: 1.1
 Author URI: http://parsa.ws
 Text Domain: wpu_shortlinks
 Domain Path: /languages/
