@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPU Shortlinks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-09 03:15+0330\n"
+"PO-Revision-Date: 2014-09-09 03:15+0330\n"
+"Last-Translator: Parsa <i@parsa.ws>\n"
+"Language-Team: WP-Parsi.com <i@parsa.ws>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../inc/bulkaction.php:38
+msgid "Generate Shortlinks"
+msgstr "ایجاد لینک کوتاه"
+
+#: ../inc/bulkaction.php:111
+msgid "Generate Shortlinks."
+msgstr "لینک کوتاه ایجاد شد"
+
+#: ../inc/bulkaction.php:111
+msgid "Posts Generate Shortlinks."
+msgstr "لینک کوتاه برای پستها ایجاد شد"
+
+#: ../inc/functions.php:72 ../inc/functions.php:78
+msgid "Error in connect to webservice!"
+msgstr "خطا در اتصال به سرویس دهنده"
+
+#: ../inc/functions.php:85
+msgid "Link not validate!"
+msgstr "لینک اعتبار ندارد!"
+
+#: ../inc/settings.php:15 ../wpu-shortlinks.php:79 ../wpu-shortlinks.php:144
+msgid "WPU Shortlinks"
+msgstr "کوتاه کننده لینک WPU"
+
+#: ../inc/settings.php:20
+msgid "Generate Content URL Shortlinks"
+msgstr "ایجاد لینک کوتاه لینکهای محتوای پست"
+
+#: ../inc/settings.php:21 ../inc/settings.php:25 ../inc/settings.php:29
+#: ../inc/settings.php:41
+msgid "Active"
+msgstr "فعال"
+
+#: ../inc/settings.php:24
+msgid "Access With Admin Bar"
+msgstr "دسترسی با نوار مدیریت"
+
+#: ../inc/settings.php:28
+msgid "Display Shortlink in Post Content"
+msgstr "نمایش لینک کوتاه در محتوای پست"
+
+#: ../inc/settings.php:31
+msgid "Type: "
+msgstr "نوع:"
+
+#: ../inc/settings.php:31
+msgid "Text"
+msgstr "متنی"
+
+#: ../inc/settings.php:32
+msgid "Textbox"
+msgstr "فیلد متنی"
+
+#: ../inc/settings.php:36
+msgid "Social Sharing"
+msgstr "اشتراک‌گذاری شبکه‌های اجتماعی"
+
+#: ../inc/settings.php:40
+msgid "Status"
+msgstr "وضعیت"
+
+#: ../inc/settings.php:45
+msgid "Order"
+msgstr "ترتیب"
+
+#: ../inc/settings.php:49
+msgid "After Shortlink"
+msgstr "بعد از لینک کوتاه"
+
+#: ../inc/settings.php:50
+msgid "Before Shortlink"
+msgstr "قبل از لینک کوتاه"
+
+#: ../inc/settings.php:57
+msgid "Text before links"
+msgstr "نوشته قبل از پیوندها"
+
+#: ../inc/settings.php:60
+msgid "Share this post:"
+msgstr "اشتراک‌گذاری مطلب:"
+
+#: ../inc/settings.php:61
+msgid "the text to show before the sharing links."
+msgstr "این نوشته قبل از پیوندهای اشتراک‌گذاری نمایش داده می‌شود."
+
+#: ../inc/settings.php:67
+msgid "Load Icon CSS?"
+msgstr "فراخوانی استایل آیکنها؟"
+
+#: ../inc/settings.php:70 ../inc/settings.php:94
+msgid "Yes"
+msgstr "بله"
+
+#: ../inc/settings.php:71 ../inc/settings.php:95
+msgid "No"
+msgstr "خیر"
+
+#: ../inc/settings.php:73
+msgid "Adds simple but pretty icons to the sharing links."
+msgstr "افزودن آیکنهای زیبا به پیوندهای اشتراک‌گذاری."
+
+#: ../inc/settings.php:79
+msgid "Icon Size"
+msgstr "اندازه آیکن"
+
+#: ../inc/settings.php:83
+msgid "Small"
+msgstr "کوچک"
+
+#: ../inc/settings.php:83 ../inc/settings.php:84
+msgid "pixels"
+msgstr "پیکسل"
+
+#: ../inc/settings.php:84
+msgid "Normal"
+msgstr "متوسط"
+
+#: ../inc/settings.php:91
+msgid "Load Pop-Up JS?"
+msgstr "فراخوانی جاوااسکریپت پاپ‌آپ؟"
+
+#: ../inc/settings.php:97
+msgid "Open Popup Window Instead of New Tab or Window"
+msgstr "ایجاد پنجره پاپ‌آپ به جای سربرگ یا پنجره جدید"
+
+#: ../inc/settings.php:103
+msgid "Twitter Username"
+msgstr "نام کاربری توییتر"
+
+#: ../inc/settings.php:107
+msgid "Set this if you want to append \"via @yourTwitterUsername\" to tweets."
+msgstr ""
+"مقدار دهید اگر می‌خواهید \"via @yourTwitterUsername\" به توییت افزوده شود."
+
+#: ../inc/settings.php:111
+msgid "Save"
+msgstr "ذخیره"
+
+#: ../inc/settings.php:118
+msgid "WPU Shortlinks Firefox Addon"
+msgstr "افزونه فایرفاکس کوتاه‌کننده‌لینک WPU"
+
+#: ../inc/settings.php:120
+msgid "Social Sharing module based by \"Social Sharing by Danny\" plugin"
+msgstr ""
+"ماژول اشتکراک‌گذاری لینک بر پایه افزونه \"Social Sharing by Danny\" است."
+
+#: ../inc/social.php:18
+msgid "Twitter"
+msgstr "توییتر"
+
+#: ../inc/social.php:19
+msgid "Facebook"
+msgstr "فیسبوک"
+
+#: ../inc/social.php:20
+msgid "Google+"
+msgstr "گوگل+"
+
+#: ../wpu-shortlinks.php:100
+msgid "<a href=\"http://wpu.ir\" target=\"_blank\">WPU.IR</a> url shortner"
+msgstr ""
+"کوتاه کننده لینک <a href=\"http://wpu.ir\" target=\"_blank\">وردپرس پارسی</a>"
+
+#: ../wpu-shortlinks.php:103
+msgid "Paste your long URL Here:"
+msgstr "لینک بلند را در جعبه متن زیر قرار دهید:"
+
+#: ../wpu-shortlinks.php:105
+msgid "Shorten URL"
+msgstr "ایجاد لینک کوتاه"
+
+#: ../wpu-shortlinks.php:108
+msgid "Please Wait ..."
+msgstr "لطفا صبر کنید ..."
+
+#: ../wpu-shortlinks.php:110 ../wpu-shortlinks.php:167
+#: ../wpu-shortlinks.php:169 ../wpu-shortlinks.php:271
+#: ../wpu-shortlinks.php:370
+msgid "Shortlink: "
+msgstr "لینک کوتاه: "
+
+#: ../wpu-shortlinks.php:194 ../wpu-shortlinks.php:216
+msgid "Shortlink"
+msgstr "لینک کوتاه"
+
+#: ../wpu-shortlinks.php:214
+msgid "Post ID Shortlink? (Optional)"
+msgstr "شناسه پست لینک کوتاه؟ (اختیاری)"
+
+#: ../wpu-shortlinks.php:215
+msgid "Shortlink Title?"
+msgstr "عنوان لینک کوتاه؟"
+
+#: ../wpu-shortlinks.php:217
+msgid "Add Shortlink wpu.ir"
+msgstr "افزودن لینک کوتاه wpu.ir"
+
+#: ../wpu-shortlinks.php:246
+msgid "Post Shortlink"
+msgstr "لینک کوتاه مطلب"
+
+#: ../wpu-shortlinks.php:359
+msgid "Shortlinker "
+msgstr "کوتاه کننده لینک"
+
+#~ msgid "so people won't have to leave your website to share."
+#~ msgstr ""
+#~ "جلوگیری از خارج شدن کاربر سایت شما برای اشتراک‌گذاری.برای جلوگیری از خارج "
+#~ "شدن کاربر از سایت شما."
+
+#~ msgid "WPU Shortlink"
+#~ msgstr "کوتاه کننده لینک WPU"
