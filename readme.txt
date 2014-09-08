@@ -67,15 +67,15 @@ wpu_social_sharing($echo=true,$args)`
 == Changelog ==
 
 = 1.1 =
-Fixed Bug Request ShortLink With Admin Bar Menu
-Fixed Bug ShortCode Generator Post Editor Button
-Two Method Show Automatic ShortLink of Post
-Adds Social Sharing Buttons
+* Fixed Bug Request ShortLink With Admin Bar Menu
+* Fixed Bug ShortCode Generator Post Editor Button
+* Two Method Show Automatic ShortLink of Post
+* Adds Social Sharing Buttons
 
 = 1.0 =
-Generate ShortLinks from Post Content URLs
-Generate ShortLinks with Bulk Action
-Request ShortLink With Admin Bar Menu
+* Generate ShortLinks from Post Content URLs
+* Generate ShortLinks with Bulk Action
+* Request ShortLink With Admin Bar Menu
 
 = 0.3 =
 validate url fixed
@@ -84,8 +84,8 @@ validate url fixed
 Webservice bug fixed
 
 = 0.1.4 =
-Add languages file
-Show ShortLink in admin posts
+* Add languages file
+* Show ShortLink in admin posts
 
 = 0.1.3 =
 Fix bug for get post link
