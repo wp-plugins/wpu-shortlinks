@@ -1,0 +1,50 @@
+
+.wpu_shortlinks_sc {
+	line-height: 16px;
+    margin: 10px 0;
+}
+
+.wpu_shortlinks_sc > a{ 
+	margin-left:12px;
+	display: inline-block;
+	text-decoration: none;
+    outline: none;
+}
+
+.wpu_shortlinks_sc > span:first-child {
+	font-weight: bold;
+}
+
+span[class^="wpuss-icon-"] {
+	width:16px;
+	height:16px;
+	display: inline-block;
+	background: url("../images/sprite-16.png") no-repeat;
+	margin-right:6px; 
+	vertical-align: middle;
+}
+
+.wpuss-icon-twitter {
+	background-position:0px 0px;
+}
+
+a:hover > .wpuss-icon-twitter {
+	background-position:0px -16px;
+}
+
+.wpuss-icon-facebook {
+	background-position:-16px 0px;
+}
+
+a:hover > .wpuss-icon-facebook {
+	background-position:-16px -16px;
+}
+
+.wpuss-icon-googleplus {
+	background-position:-32px 0px;
+}
+
+a:hover > .wpuss-icon-googleplus {
+	background-position:-32px -16px;
+}
+
